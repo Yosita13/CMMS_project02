@@ -59,9 +59,6 @@ function RepairDetails() {
 
     const onFinish = async (values) => {
         setOpen(false);
-        console.log('Received values of form: ', values);
-        console.log('id front', location.state);
-        console.log('employee', employee_name);
         try {
             console.log('Received values of form: ', values);
             const { data } = await axios.put(`http://localhost:5000/DB/put/repair/${location.state}}`, {
@@ -71,9 +68,7 @@ function RepairDetails() {
                 employee_name: employee_name
             })
             history.push({ pathname: '/webapp/sendRepairFinish' })
-            //sendNoti();
         } catch (e) {
-
         }
     };
 
